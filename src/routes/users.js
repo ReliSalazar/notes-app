@@ -48,6 +48,11 @@ router.post('/users/signup', async (req, res) => {
         req.flash('success_msg', 'You are registered');
         res.redirect('/users/signin');
     }
-})
+});
+
+router.get('/users/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
 
 module.exports = router;
